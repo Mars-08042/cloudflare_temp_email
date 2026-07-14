@@ -12,6 +12,7 @@ on:
           - cf-marsky
           - cf-marslume
           - cf-forforever
+          - cf-080420
           - all
 
 jobs:
