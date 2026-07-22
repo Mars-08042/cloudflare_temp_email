@@ -6,10 +6,10 @@ on:
       target:
         description: "选择要部署的 Cloudflare 环境"
         required: true
-        default: "cf-marsky"
+        default: "cf-marsyu"
         type: choice
         options:
-          - cf-marsky
+          - cf-marsyu
           - cf-marslume
           - cf-forforever
           - cf-080420
@@ -164,14 +164,14 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           WRANGLER_TOML_CONTENT: ${{ secrets.BACKEND_TOML }}
 
-  deploy-marsky:
-    if: ${{ inputs.target == 'all' || inputs.target == 'cf-marsky' }}
+  deploy-marsyu:
+    if: ${{ inputs.target == 'all' || inputs.target == 'cf-marsyu' }}
     runs-on: ubuntu-latest
     environment:
-      name: cf-marsky
-      url: https://mail.marsky.top
+      name: cf-marsyu
+      url: https://mail.marsyu.top
     concurrency:
-      group: deploy-cf-marsky
+      group: deploy-cf-marsyu
       cancel-in-progress: false
     permissions:
       contents: write
@@ -190,7 +190,7 @@ jobs:
           version: 10
           run_install: false
 
-      - name: Deploy cf-marsky
+      - name: Deploy cf-marsyu
         run: |
           export use_worker_assets=${{ secrets.USE_WORKER_ASSETS }}
           export use_worker_assets_with_telegram=${{ secrets.USE_WORKER_ASSETS_WITH_TELEGRAM }}
